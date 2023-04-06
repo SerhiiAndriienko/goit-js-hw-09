@@ -37,5 +37,18 @@ button[data-stop] {
 }
 .timer {
   display: flex;
+  justify-content: center;
+
   margin-top: 40px;
+}
+button[data-start2] {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 20px;
+}
+#datetime-picker {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
 }
