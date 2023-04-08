@@ -44,11 +44,24 @@ button[data-stop] {
 button[data-start2] {
   display: block;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 70px;
   margin-top: 20px;
 }
 #datetime-picker {
   display: block;
   margin: 0 auto;
   padding: 20px;
+}
+label {
+  font-weight: bold;
+}
+.form button {
+  font-weight: bold;
+  padding: 20px 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.form input {
+  padding: 10px 0px;
+  font-size: large;
 }
