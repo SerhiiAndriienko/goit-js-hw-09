@@ -13,12 +13,11 @@ function createPromise(event) {
   let delay = Number(delayEl.value);
   const amount = Number(amountEl.value);
   const step = Number(stepEl.value);
-
+  let i;
   event.preventDefault();
-  for (let i = 0; i < amount; i++) {
+  for (i = 0; i < amount; i++) {
     const shouldResolve = Math.random() > 0.3;
-
-    const promise = new Promise((resolve, reject) => {
+    new Promise((resolve, reject) => {
       setTimeout(() => {
         if (shouldResolve) {
           resolve(` Fulfilled promise ${position + i} in ${delay}ms`);
@@ -28,13 +27,5 @@ function createPromise(event) {
         delay += step;
       }, delay + step * i);
     });
-
-    promise
-      .then(value => {
-        Notiflix.Notify.success(value);
-      })
-      .catch(error => {
-        Notiflix.Notify.failure(error);
-      });
   }
 }
