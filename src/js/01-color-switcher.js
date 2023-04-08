@@ -2,20 +2,18 @@ const startBtn = document.querySelector('button[data-start]');
 const stopBtn = document.querySelector('button[data-stop]');
 let timerForChangeColor = null;
 
-startBtn.addEventListener('click', () => {
-  timerForChangeColor = setInterval(clickOnStart, 1000);
-});
+startBtn.addEventListener('click', clickOnStart);
 stopBtn.addEventListener('click', clickOnStop);
 
-function clickOnStart(event) {
+function clickOnStart() {
   startBtn.setAttribute('disabled', 'disabled');
   stopBtn.removeAttribute('disabled', 'disabled');
-
-  const randomColor = `${getRandomHexColor()}`;
-
-  document.body.style.backgroundColor = randomColor;
+  timerForChangeColor = setInterval(() => {
+    const randomColor = `${getRandomHexColor()}`;
+    document.body.style.backgroundColor = randomColor;
+  }, 1000);
 }
-function clickOnStop(event) {
+function clickOnStop() {
   this.setAttribute('disabled', 'disabled');
   clearInterval(timerForChangeColor);
   startBtn.removeAttribute('disabled', 'disabled');
